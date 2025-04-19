@@ -1,60 +1,32 @@
 public class Main {
     public static void main(String[] args) {
-// Задача 1 - 1 вариант работа с двумя переменными
-        int clientOSiOS = 0;
-        int clientOSAndroid = 1;
-        int clientDeviceYear = 2015;
-        if (clientOSiOS > 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOSAndroid == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        } else {
-            System.out.println("Не получится скачать приложение, так как такой операционной системы нет.");
-        }
-        System.out.println();
-        // Задача 1 - 2 вариант работа с одной переменной
-        int clientOS = 0;
+
+        System.out.println("Task 1"); // Задача 1
+        int clientOS = 1;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1){
+            System.out.println("Установите версию приложения для Android по ссылке");
         } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        System.out.println();
-        // Задача 2 - 1 вариант работа с двумя переменными
-        if (clientOSiOS > 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear <= 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Не получится скачать приложение, так как такой операционной системы нет.");
-            }
-        } else if (clientOSAndroid > 0) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear <= 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Не получится скачать приложение, так как такой операционной системы нет.");
-            }
-        }
-        System.out.println();
-        // Задача 2 - 2 вариант работа с одной переменной
-        if (clientOS > 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear <= 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS >= 0) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-            if (clientDeviceYear <= 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            }
-        } else {
-            System.out.println("Не получится скачать приложение, так как такой операционной системы нет.");
+            System.out.println("Установка невозможна");
         }
 
-        System.out.println();
+        System.out.println("Task 2"); // Задача 2
 
-        // Задача 3
+        int clientDeviceYear = 2015;
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+
+        System.out.println("Task 3"); // Задача 3
+
         int year = 2025;
         int leapYearIntroduced = 1584;
         if (year <= leapYearIntroduced) {
@@ -68,19 +40,20 @@ public class Main {
         } else {
             System.out.println(year + " год не является високосным.");
         }
-        // Задача 4
+        System.out.println("Task 4"); // Задача 4
+
         int deliveryDistance = 95;
         int dayIn20Km = 1;
-        if (0 < deliveryDistance && 20 > deliveryDistance) {
+        if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней на доставку: " + dayIn20Km + " день.");
-        } else if (20 < deliveryDistance && 60 > deliveryDistance) {
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             System.out.println("Потребуется дней на доставку: " + (dayIn20Km + 1) + " дня.");
-        } else if (60 < deliveryDistance && 100 > deliveryDistance) {
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             System.out.println("Потребуется дней на доставку: " + (dayIn20Km + 1 + 1) + " дня.");
         } else {
             System.out.println("Свыше 100 км доставки нет.");
         }
-        // Задача 5 - 1 вариант проверка каждого варианта case
+        System.out.println("Task 5 - 1"); // Задача 5 - 1 вариант проверка каждого варианта case
         int monthNumber = 12;
         switch (monthNumber) {
             case 1:
@@ -122,7 +95,7 @@ public class Main {
             default:
                 System.out.println("Такого месяца не существует - номер месяца больше 12");
         }
-        // Задача 5 - 2 вариант проверка группы case
+        System.out.println("Task 5 - 2");// Задача 5 - 2 вариант проверка группы case
         switch (monthNumber) {
             case 1:
             case 2:
